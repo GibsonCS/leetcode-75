@@ -21,16 +21,19 @@
   merged: a p b q   r   s
 */
 
+console.time("time2");
 const word1 = "abc";
 const word2 = "pds";
+const word1MoreWord2 = word1.concat(word2);
 
-var mergeAlternately = function (word1, word2) {
-  let word3 = "";
-  for (let i = 0; i <= word1.length + word2.length; i++) {
-    if (word1[i]) word3 += word1[i];
-    if (word2[i]) word3 += word2[i];
+let mergedString = "";
+
+function mergeAlternately(word1, word2) {
+  for (let i = 0; i <= word1MoreWord2.length; i++) {
+    if (word1[i]) mergedString += word1[i];
+    if (word2[i]) mergedString += word2[i];
   }
-  return word3;
-};
-
+  return mergedString;
+}
+console.timeEnd("time2");
 console.log(mergeAlternately(word1, word2));
