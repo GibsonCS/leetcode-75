@@ -8,42 +8,20 @@ exemple:
     output: 3
 */
 
-console.time("time");
-function countPairs(ar) {
+console.time("time1");
+function countPairs(array) {
   let pairs = 0;
+  const setSocks = new Set();
 
-  const items = new Set();
-
-  for (const color of ar) {
-    if (!items.has(color)) {
-      items.add(color);
-    } else {
-      pairs++;
-      items.delete(color);
-    }
+  for (const sock of socks) {
+    !setSocks.has(sock) === true
+      ? setSocks.add(sock)
+      : (pairs++, setSocks.delete(sock));
   }
+
   return pairs;
 }
-console.timeEnd("time");
+console.timeEnd("time1");
 
-const ar = [10, 20, 20, 10, 10, 30, 50, 10, 20];
-console.log(countPairs(ar));
-
-// function sockMerchant(ar) {
-//   let pairs = 0;
-
-//   const colors = new Set();
-
-//   for (const i in ar) {
-//     if (!colors.has(ar[i])) {
-//       colors.add(ar[i]);
-//     } else {
-//       pairs++;
-//       colors.delete(ar[i]);
-//     }
-//   }
-//   return pairs;
-// }
-
-// const ar = [10, 20, 20, 10, 10, 30, 50, 10, 20];
-// console.log(sockMerchant(ar));
+const socks = [10, 20, 20, 10, 10, 30, 50, 10, 20];
+console.log(countPairs(socks));
