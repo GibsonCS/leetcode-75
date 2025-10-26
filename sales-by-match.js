@@ -13,7 +13,7 @@ function countPairs(array) {
   let pairs = 0;
   const setSocks = new Set();
 
-  for (const sock of socks) {
+  for (const sock of array) {
     !setSocks.has(sock) ? setSocks.add(sock) : (pairs++, setSocks.delete(sock));
   }
 
